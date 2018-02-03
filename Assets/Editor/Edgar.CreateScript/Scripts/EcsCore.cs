@@ -7,7 +7,7 @@ namespace Edgar.CreateScript
     public class EcsCore
     {
         public const string PluginName = "Edgar.CreateScript";
-        public const int PluginVersion = 1;
+        public const int PluginVersion = 2;
 
         /// <summary>
         /// Path to current active folder. Determined by which file/folder is selected in inspector

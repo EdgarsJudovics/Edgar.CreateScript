@@ -30,7 +30,7 @@ namespace Edgar.CreateScript
                 { "company",    Config.CompanyName },
                 { "product",    Config.ProductName },
                 { "namespace",  Config.IsNamespaceAutoNesting ? CreateNestedNamespace() : Config.Namespace },
-                { "filename",   Path.GetFileName(FilePath) },
+                { "filename",   CreateFileName() },
                 { "scriptname", Path.GetFileNameWithoutExtension(FilePath) },
             };
             foreach (var tag in t)
@@ -40,6 +40,12 @@ namespace Edgar.CreateScript
                 Tags.Add(tag.Name, tag.Value);
         }
 
+        private string CreateFileName()
+        {
+            var fileName = Path.GetFileName(FilePath);
+            var extensionIndex = fileName.LastIndexOf(".txt", StringComparison.InvariantCulture);
+            return fileName.Substring(0, extensionIndex) + ".cs";
+        }
         private string CreateNestedNamespace()
         {
             var p = FilePath.Substring(FilePath.IndexOf(Config.NamespaceAutoNestingRoot, StringComparison.InvariantCulture) +

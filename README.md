@@ -17,6 +17,12 @@ Features:
 Tested on `Unity3D 2017.3` but should work on other versions too
 ## Installation
 Either download the unity package and import it or download (clone for you fancy folk) the project and put `Editor/` folder in your own project.
+
+## Upgrading
+1) Delete `Scripts/` folder inside `Editor/Edgar.CreateScript/`
+2) Import new package  
+`⚠ Uncheck Templates/ folder if you don't want default templates to be overwritten ⚠`
+
 ## Usage
 `Right click in project view > Create Script` and choose the template you wish to create.  
 ![Context menu](Screenshots/menu.png)  
